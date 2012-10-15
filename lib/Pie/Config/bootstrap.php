@@ -3,10 +3,6 @@
 require_once TEMPLATEPATH . '/lib/Pie/Config/core.php';
 
 
-
-
-
-
 add_action('init', 'create_post_type');
 
 function create_post_type() {
