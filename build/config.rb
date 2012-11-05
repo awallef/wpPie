@@ -4,7 +4,7 @@
 http_path = "/"
 sass_dir = '../src/sass'
 css_dir = '../app/webroot/css'
-images_dir = '../app/webroot/assets'
+images_dir = '../app/webroot/img'
 javascripts_dir = '../app/webroot/js'
 http_stylesheets_path = 'css'
 http_javascripts_path = 'js'

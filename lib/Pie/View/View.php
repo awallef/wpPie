@@ -13,6 +13,9 @@ class View extends Object {
 	    if (FileFinder::fileExists( APP_PATH . '/View/Elements/' . $elem . '.php' ) ) {
             $elem = APP_PATH . '/View/Elements/' . $elem . '.php';
             return $this->_evaluate($elem, $this->viewVars);
+        }elseif(FileFinder::fileExists( PIE_LIB_PATH . '/View/Elements/' . $elem . '.php' )){
+        	$elem = PIE_LIB_PATH . '/View/Elements/' . $elem . '.php';
+            return $this->_evaluate($elem, $this->viewVars);
         }
     }
 

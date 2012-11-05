@@ -1,15 +1,9 @@
 @import "compass";
-@import "compass/reset";
-//@import "compass/layout/sticky-footer";
 
-@import "partials/extra";
-@import "partials/blankwork";
 @import "partials/utils";
 @import "partials/rUtils";
 
-
 @import "vars/settings";
-
 
 @import "theme/fonts";
 @import "theme/texts";
@@ -21,4 +15,4 @@
 
 @import "theme/error";
 
-@import "theme/responsive";
+

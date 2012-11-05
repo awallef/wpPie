@@ -17,6 +17,8 @@ class Controller extends Object
     
     public $View = null;
     
+    public $Model = null;
+    
     public function __construct(  ) {
         if ($this->name === null) {
             $this->name = substr(get_class($this), 0, -10);
@@ -27,6 +29,8 @@ class Controller extends Object
         }
         
         $this->View = new View();
+        
+        $this->Model = new WP_Query();
         
         parent::__construct();
     }

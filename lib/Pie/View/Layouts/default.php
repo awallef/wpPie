@@ -7,7 +7,7 @@
 	   <meta name="robots" content="noindex, nofollow" /> 
 	<?php } ?>
 	
-	<title>Title</title>
+	<title><?php bloginfo('name'); ?></title>
 	
 	<link rel="stylesheet" href="<?php echo CSS .'bootstrap.min.css'; ?>" type="text/css" />
 	<link rel="stylesheet" href="<?php echo CSS .'screen.css'; ?>" type="text/css" />
