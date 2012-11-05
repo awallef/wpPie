@@ -1,12 +1,19 @@
 <?php
 
-class Controller extends Object {
+class Controller extends Object
+{
 
+    public $helpers = array('Html');
+    
     public $name = null;
+    
+    public $layout = null;
     
     public $viewPath = null;
     
-    public $viewVars = null;
+    public $viewVars = array();
+    
+    public $render = null;
     
     public $View = null;
     
@@ -42,6 +49,6 @@ class Controller extends Object {
         } else {
             $data = array($one => $two);
         }
-        $this->viewVars = $data + $this->viewVars;
+        $this->viewVars = array_merge($data, $this->viewVars);
     }
 }

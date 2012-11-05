@@ -1,22 +1,10 @@
 <?php
 
 require_once TEMPLATEPATH . '/lib/Pie/Config/core.php';
+require_once TEMPLATEPATH . '/lib/Pie/Core/inc.php';
 
-
-add_action('init', 'create_post_type');
-
-function create_post_type() {
-    register_post_type('acme_product', array(
-        'labels' => array(
-            'name' => __('Products'),
-            'singular_name' => __('Product')
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'rewrite' => array('slug' => 'products'),
-            )
-    );
+function load_bootstrap() {
+    FileFinder::tryIncludeFile( APP_PATH . '/Config/bootstrap.php');
 }
 
-
-?>
+add_action('init', 'load_bootstrap');

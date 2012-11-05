@@ -1,0 +1,20 @@
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clear {
+  clear: both; }
+
+.three {
+  width: 31%;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%; }
+
+.two {
+  width: 48%;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%; }
