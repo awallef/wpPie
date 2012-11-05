@@ -8,5 +8,5 @@ define('APP_PATH', TEMPLATEPATH . '/app');
 define('WEBROOT', get_bloginfo('template_directory') . '/app/webroot/');
 
 define('CSS', WEBROOT . 'css/');
-define('ASSETS', WEBROOT . 'assets/');
+define('IMG', WEBROOT . 'img/');
 define('JS', WEBROOT . 'js/');
