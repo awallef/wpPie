@@ -8,3 +8,5 @@ function load_bootstrap() {
 }
 
 add_action('init', 'load_bootstrap');
+
+add_theme_support( 'post-thumbnails' );

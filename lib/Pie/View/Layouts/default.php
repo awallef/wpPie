@@ -38,7 +38,7 @@
 	<?php echo $content_for_layout; ?>
 	
 	<!-- footer -->
-	<?php echo $this->element('footer'); ?>
+	<!-- <div><?php echo $this->element('footer'); ?></div> -->
 
 </body>
 </html>

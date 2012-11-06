@@ -6,15 +6,12 @@ class HomeController extends AppController{
     {
 		$args = array(
 			'post_type'=> 'post',
-			'order'    => 'ASC'
+			'order'    => 'DSC'
 		);
 		
 		$posts = $this->Model->query( $args );
 		
 		$this->set('posts', $posts);
-		
-		
-					
-  						
+				
     }
 }

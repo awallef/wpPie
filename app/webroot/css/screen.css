@@ -12,3 +12,12 @@
   src: url("../fonts/tradegotboltwo-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/tradegotboltwo-webfont.woff") format("woff"), url("../fonts/tradegotboltwo-webfont.ttf") format("truetype"), url("../fonts/tradegotboltwo-webfont.svg#tradegothicregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+.footerLine {
+  border-top: #666 3px solid;
+  padding: 10px 0 0 0;
+  margin: 50px 0 0 0; }
+
+.temp {
+  height: 500px;
+  background-color: #E14; }

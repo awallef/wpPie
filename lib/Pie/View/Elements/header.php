@@ -6,13 +6,28 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#"> <?php bloginfo('name'); ?> </a>
+      <a class="brand" href="<?php echo site_url(); ?>"> <?php bloginfo('name'); ?> </a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="active"><a href="http://localhost:8888/github/Stage/wpTest/">Home</a></li>
+          <li><a href="<?php echo get_page_link(31);?>">About</a></li>
+          <li><a href="<?php echo get_page_link(33);?>">Contact</a></li>
+          <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Lien 1</a></li>
+                  <li><a href="#">Lien 2</a></li>
+                  <li><a href="#">Lien 3</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Autre Categories</li>
+                  <li><a href="#">Lien 1</a></li>
+                  <li><a href="#">Lien 2</a></li>
+                </ul>
+              </li>
         </ul>
+         <form class="navbar-search pull-right">
+ 	 	<input type="text" class="search-query" placeholder="Search">
+	  </form>
       </div><!--/.nav-collapse -->
     </div>
   </div>
