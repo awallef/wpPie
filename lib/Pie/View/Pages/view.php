@@ -1,45 +1,71 @@
 <!-- Pages View -->
-
 <div class="container">
 <!-- Banner -->
 	<?php echo $this->element('banner'); ?>
-	<div class="row">
-	
-	<form action="#" method="get" accept-charset="utf-8">
-		<fieldset>
-		<div class="span4">
-			<p>
-				<label for="nom">NOM</label><br />
-				<input type="text" name="nom" value="" id="nom">
-			</p>
-			<p>
-				<label for="prenom">PRENOM</label><br />
-				<input type="text" name="prenom" value="" id="prenom">
-			</p>
-			<p>
-				<label for="email">MAIL</label><br />
-				<input type="text" name="email" value="" id="email">
-			</p>
-			
+	<div class="row aboutHead">
+		<div class="span6">
+		<img src="http://placehold.it/530x300"/>
 		</div>
-		<div class="span4">
-			<p>
-				<label for="message">MESSAGE</label><br />
-				<textarea  rows="12" name="message" id="message"></textarea>
-			</p>
-			<p>
-			
-
-    <a class="btn btn-primary btn-medium pull-right">
-      Learn more
-    </a>
-  </p>
-		</div>		
-		<div class="span4">
 	
-	<iframe width="370" height="295" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ch/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=Chemin+de+la+Cure+12+13,+Belmont-sur-Lausanne&amp;aq=0&amp;oq=chemin+de+la+cure+12+13&amp;sll=46.58687,6.656635&amp;sspn=1.485511,3.284912&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Chemin+de+la+Cure+12,+1092+Belmont-sur-Lausanne,+Vaud&amp;ll=46.519734,6.680421&amp;spn=0.002054,0.003208&amp;z=14&amp;output=embed"></iframe>
-	</div>
+		<div class="span6">
+		We work close to our clients to provide them the exact solution they need for their web and mobile needs.
 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+		</div>
+	</div><!-- end row -->
+	
+	<div class="row aboutTeam">
+		<div class="span1"></div>
+		<div class="span2">
+		<img src="http://placehold.it/250x150"/>
+		
+		<h6>Nom Prénom</h6>
+		- Lorem ipsum dolor sit.<br/>
+		- Lorem ipsum dolor sit.<br/><br/>
+		
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+		</div>
+		
+		<div class="span2">
+		<img src="http://placehold.it/250x150"/>
+		
+		<h6>Nom Prénom</h6>
+		- Lorem ipsum dolor sit.<br/>
+		- Lorem ipsum dolor sit.<br/><br/>
+		
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+		</div>
+		
+		<div class="span2">
+		<img src="http://placehold.it/250x150"/>
+		
+		<h6>Nom Prénom</h6>
+		- Lorem ipsum dolor sit.<br/>
+		- Lorem ipsum dolor sit.<br/><br/>
+		
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+		</div>
+		
+		<div class="span2">
+		<img src="http://placehold.it/250x150"/>
+
+		<h6>Nom Prénom</h6>
+		- Lorem ipsum dolor sit.<br/>
+		- Lorem ipsum dolor sit.<br/><br/>
+		
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+		</div>
+		
+		<div class="span2">
+		<img src="http://placehold.it/250x150"/>
+		
+		<h6>Nom Prénom</h6>
+		- Lorem ipsum dolor sit.<br/>
+		- Lorem ipsum dolor sit.<br/><br/>
+		
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+		</div>
+		<div class="span1"></div>
 	</div>
 	<?php echo $this->element('footer'); ?>
-</div>
+</div><!-- end container -->

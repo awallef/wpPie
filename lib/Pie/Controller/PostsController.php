@@ -7,6 +7,7 @@ class PostsController extends AppController{
     
     
 	$args = array(
+	'post_type'		   => 'post',
 	'before'           => '<p>' . __('Pages:'),
 	'after'            => '</p>',
 	'link_before'      => '<',

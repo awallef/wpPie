@@ -13,6 +13,9 @@
   font-weight: normal;
   font-style: normal; }
 
+#resume .secondaryTitle {
+  margin-bottom: 50px; }
+
 .footerLine {
   border-top: #666 3px solid;
   padding: 10px 0 0 0;
@@ -21,3 +24,30 @@
 .temp {
   height: 500px;
   background-color: #E14; }
+
+#resume {
+  margin-top: 5%;
+  text-align: justify; }
+  #resume .span3 {
+    width: 230px; }
+
+.row.lastPosts {
+  border-bottom: #EEE solid 1px;
+  padding-bottom: 50px; }
+.row.aboutHead {
+  border-bottom: #EEE solid 1px;
+  padding-bottom: 50px; }
+.row.aboutTeam {
+  padding-top: 50px; }
+
+#accrocheArea .accrocheContent {
+  margin: 40px 0 0 0;
+  padding: 100px;
+  background-color: #EEE;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px; }
+
+.footerLine {
+  height: 50px;
+  padding-top: 20px; }
