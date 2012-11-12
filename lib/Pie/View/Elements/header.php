@@ -9,7 +9,7 @@
       <a class="brand" href="<?php echo site_url(); ?>"> <?php bloginfo('name'); ?> </a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="http://localhost:8888/github/Stage/wpTest/">Home</a></li>
+          <li class="active"><a href="<?php echo site_url(); ?>">Home</a></li>
           <li><a href="<?php echo get_page_link(31);?>">About</a></li>
           <li><a href="<?php echo get_page_link(33);?>">Contact</a></li>
           <li class="dropdown">

@@ -1,122 +1,97 @@
 <?php
 include_once 'lib/Pie/Config/bootstrap.php';
 
-add_action('init', 'about_page');
+//Posttype Portfolio
 
-function about_page() {
-  $labels = array(
-    'name' => _x('About Us', 'post type general name'),
-    'singular_name' => _x('About us item', 'post type singular name'),
-    'add_new' => _x('Add New', 'About us item'),
-    'add_new_item' => __('Add New About us item'),
-    'edit_item' => __('Edit an About us item'),
-    'new_item' => __('New About us item'),
-    'all_items' => __('All About us items'),
-    'view_item' => __('View About us item'),
-    'search_items' => __('Search About us items'),
-    'not_found' =>  __('Nothing found'),
-    'not_found_in_trash' => __('Nothing found in Trash'), 
-    'parent_item_colon' => '',
-    'menu_name' => __('About Us')
+add_action( 'init', 'register_cpt_portfolio' );
 
-  );
-  $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true, 
-    'show_in_menu' => true, 
-    'query_var' => true,
-    'rewrite' => array( 'slug' => _x( 'book', 'URL slug' ) ),
-    'capability_type' => 'post',
-    'has_archive' => true, 
-    'hierarchical' => false,
-    'menu_position' => null,
-    'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
-  ); 
-  register_post_type('Aboutus', $args);
+function register_cpt_portfolio() {
+
+$labels = array(
+'name' => _x( 'Portfolio', 'portfolio' ),
+'singular_name' => _x( 'Portfolio', 'portfolio' ),
+'add_new' => _x( 'Add New', 'portfolio' ),
+'add_new_item' => _x( 'Add New Entry', 'portfolio' ),
+'edit_item' => _x( 'Edit Portfolio Entry', 'portfolio' ),
+'new_item' => _x( 'New Portfolio Entry', 'portfolio' ),
+'view_item' => _x( 'View Portfolio', 'portfolio' ),
+'search_items' => _x( 'Search Portfolio Entries', 'portfolio' ),
+'not_found' => _x( 'No entries found', 'portfolio' ),
+'not_found_in_trash' => _x( 'No entries found in Trash', 'portfolio' ),
+'parent_item_colon' => _x( 'Parent Portfolio:', 'portfolio' ),
+'menu_name' => _x( 'Portfolio', 'portfolio' ),
+);
+
+$args = array(
+'labels' => $labels,
+'hierarchical' => false,
+'description' => 'Portfolio post type generated for 3xW.',
+'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ),
+
+'public' => true,
+'show_ui' => true,
+'show_in_menu' => true,
+'menu_position' => 5,
+
+'show_in_nav_menus' => true,
+'publicly_queryable' => true,
+'exclude_from_search' => false,
+'has_archive' => true,
+'query_var' => true,
+'can_export' => true,
+'rewrite' => true,
+'capability_type' => 'post'
+);
+
+register_post_type( 'portfolio', $args );
 }
 
+//Posttype Team Members
 
-register_taxonomy('Team', array('Aboutus'), 
-								array(
-								'hierarchical' => true, 
-								'label' => 'Team', 
-								'singular_label' => 'Team', 
-								'Team', 'rewrite' => true
-								));
+add_action( 'init', 'register_cpt_team' );
 
+function register_cpt_team() {
 
-// Contenu à partir d'ici à adapter au theme.
+$labels = array(
+'name' => _x( 'Member', 'team members' ),
+'singular_name' => _x( 'Member', 'team members' ),
+'add_new' => _x( 'Add New Member', 'team members' ),
+'add_new_item' => _x( 'Add New Member', 'team members' ),
+'edit_item' => _x( 'Edit Member', 'team members' ),
+'new_item' => _x( 'New Member', 'team members' ),
+'view_item' => _x( 'View Members', 'team members' ),
+'search_items' => _x( 'Search Member Entries', 'team members' ),
+'not_found' => _x( 'No entries found', 'team members' ),
+'not_found_in_trash' => _x( 'No entries found in Trash', 'team members' ),
+'parent_item_colon' => _x( 'Parent member', 'team members' ),
+'menu_name' => _x( 'About Us', 'team members' ),
+);
 
-add_action("admin_init", "admin_init");   
+$args = array(
+'labels' => $labels,
+'hierarchical' => false,
+'description' => 'Team Member post type generated for the About Us page.',
+'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ),
 
-function admin_init(){ 
-	add_meta_box("year_completed-meta", "Year Completed", "year_completed", "portfolio", "side", "low"); 
-	add_meta_box("credits_meta", "Design &amp; Build Credits", "credits_meta", "portfolio", "normal", "low");
-	 }   
-	 
-function year_completed(){ 
-	global $post; 
-	$custom = get_post_custom($post->ID); 
-	$year_completed = $custom["year_completed"][0];
-	?> 
-	<label>Year</label> 
-	<input name="year_completed" value="<?php echo $year_completed; ?>" /> 
-	<?php 
-	}   
-	
-	function credits_meta() { 
-		global $post; 
-		$custom = get_post_custom($post->ID); 
-		$designers = $custom["designers"][0]; 
-		$developers = $custom["developers"][0]; 
-		?> 
-		<p>
-			<label>Designed By</label><br /> 
-			<textarea cols="50" rows="5" name="designers"><?php echo $designers; ?></textarea>
-		</p> 
-		<p>
-			<label>Built By</label><br /> 
-			<textarea cols="50" rows="5" name="developers"><?php echo $developers; ?></textarea>
-		</p>
-		<?php 
-		}			
-?>
-<?php
-		
-add_action("manage_posts_custom_column",  "portfolio_custom_columns");
-add_filter("manage_edit-portfolio_columns", "portfolio_edit_columns");
- 
-function portfolio_edit_columns($columns){
-  $columns = array(
-    "cb" => "<input type='checkbox' />;",
-    "title" => "Portfolio Title",
-    "description" => "Description",
-    "year" => "Year Completed",
-    "skills" => "Skills",
-  );
- 
-  return $columns;
+'public' => true,
+'show_ui' => true,
+'show_in_menu' => true,
+'menu_position' => 5,
+
+'show_in_nav_menus' => true,
+'publicly_queryable' => true,
+'exclude_from_search' => false,
+'has_archive' => true,
+'query_var' => true,
+'can_export' => true,
+'rewrite' => true,
+'capability_type' => 'post'
+);
+
+register_post_type( 'teammembers', $args );
 }
-function portfolio_custom_columns($column){
-  global $post;
- 
-  switch ($column) {
-    case "description":
-      the_excerpt();
-      break;
-    case "year":
-      $custom = get_post_custom();
-      echo $custom["year_completed"][0];
-      break;
-    case "skills":
-      echo get_the_term_list($post->ID, 'Skills', '', ', ','');
-      break;
-  }
-}
+
  		
-
 add_theme_support( 'post-thumbnails' );
 
 // THIS LINKS THE THUMBNAIL TO THE POST PERMALINK
@@ -130,6 +105,14 @@ add_theme_support( 'post-thumbnails' );
 	return $html;
 }
 
-add_image_size('featuredBlogPostsImg', 370, 250, true);
+add_image_size('classic-thumb', 120, 120, true); // Classic crop
+
+add_image_size('featured-thumb', 370, 250, true); // Crop set for thumbnails  in the featured blog posts Area
+
+add_image_size('project-thumb', 370, 170, true); // Crop set for thumbnails  in the featured projects Area
+
+add_image_size('oldpostfeed-thumb', 270, 150, true); // Crop set for thumbnails  in the "older posts" Area
+
+add_image_size( 'fullpost-thumb', 590, 9999, true ); // Unlimited Height Mode
 
 ?>

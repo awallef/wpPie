@@ -4,7 +4,7 @@
 	<?php echo $this->element('banner'); ?>
 	<div class="row aboutHead">
 		<div class="span6">
-		<img src="http://placehold.it/530x300"/>
+		<img src="http://localhost:8888/github/Stage/wpTest/wp-content/uploads/2012/11/palace1.jpg"/>
 		</div>
 	
 		<div class="span6">
@@ -14,58 +14,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 		</div>
 	</div><!-- end row -->
 	
-	<div class="row aboutTeam">
-		<div class="span1"></div>
-		<div class="span2">
-		<img src="http://placehold.it/250x150"/>
-		
-		<h6>Nom Prénom</h6>
-		- Lorem ipsum dolor sit.<br/>
-		- Lorem ipsum dolor sit.<br/><br/>
-		
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-		</div>
-		
-		<div class="span2">
-		<img src="http://placehold.it/250x150"/>
-		
-		<h6>Nom Prénom</h6>
-		- Lorem ipsum dolor sit.<br/>
-		- Lorem ipsum dolor sit.<br/><br/>
-		
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-		</div>
-		
-		<div class="span2">
-		<img src="http://placehold.it/250x150"/>
-		
-		<h6>Nom Prénom</h6>
-		- Lorem ipsum dolor sit.<br/>
-		- Lorem ipsum dolor sit.<br/><br/>
-		
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-		</div>
-		
-		<div class="span2">
-		<img src="http://placehold.it/250x150"/>
-
-		<h6>Nom Prénom</h6>
-		- Lorem ipsum dolor sit.<br/>
-		- Lorem ipsum dolor sit.<br/><br/>
-		
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-		</div>
-		
-		<div class="span2">
-		<img src="http://placehold.it/250x150"/>
-		
-		<h6>Nom Prénom</h6>
-		- Lorem ipsum dolor sit.<br/>
-		- Lorem ipsum dolor sit.<br/><br/>
-		
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-		</div>
-		<div class="span1"></div>
-	</div>
+	<?php echo $this->element('teammembers'); ?>
+	
 	<?php echo $this->element('footer'); ?>
 </div><!-- end container -->

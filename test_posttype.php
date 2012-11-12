@@ -1,10 +1,10 @@
-<!-- STEP 1 --->
+<?php
 
 add_action('init', 'about_page');
 
 function about_page() {
   $labels = array(
-    'name' => _x('About Us', 'post type general name),
+    'name' => _x('About Us', 'post type general name'),
     'singular_name' => _x('About us item', 'post type singular name'),
     'add_new' => _x('Add New', 'About us item'),
     'add_new_item' => __('Add New About us item'),
@@ -37,7 +37,6 @@ function about_page() {
 }
 
 
-<!-- STEP 2 --->
 
 
 
@@ -80,3 +79,6 @@ function year_completed(){
 		&lt;textarea cols="50" rows="5" name="producers"&gt;&lt;?php echo $producers; ?&gt;&lt;/textarea&gt;&lt;/p&gt; 
 		&lt;?php 
 		}
+			
+			
+?>

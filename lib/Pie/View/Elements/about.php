@@ -4,7 +4,7 @@
 	<?php echo $this->element('banner'); ?>
 	<div class="row aboutHead">
 		<div class="span6">
-		<img src="http://placehold.it/530x300"/>
+		<img src="http://localhost:8888/github/Stage/wpTest/wp-content/uploads/2012/11/palace1.jpg"/>
 		</div>
 	
 		<div class="span6">

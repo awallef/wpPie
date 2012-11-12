@@ -24,8 +24,13 @@
 				<?php
 				echo $post->post_content; ?>
 			<div class="postNav">
-				<< Previous post Next Post >>
-						
+				<div class="pagination">
+				  <ul>
+				    <li><a href="#">Prev</a></li>
+
+				    <li><a href="#">Next</a></li>
+				  </ul>
+				</div>						
 			</div>	
 				
 			</div> <!-- end span5 -->
@@ -33,9 +38,8 @@
 				<?php 
 					 if ( has_post_thumbnail()) {
 					   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
-					   echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >';
-					   the_post_thumbnail('large');
-					   echo '</a>';
+					  
+					   the_post_thumbnail('fullpost-thumb');
 					 }
 					 ?>	
 			</div><!-- end span5 -->		

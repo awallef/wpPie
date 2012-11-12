@@ -4,14 +4,19 @@ class PagesController extends AppController{
     
     public function view()
     {
+    
+    //Team Member posts
+    
 	   $args = array(
-			'post_type'=> 'page',
-			'order'    => 'DSC'
+			'post_type'=> 'teammembers',
+			'order'    => 'ASC',
+
 		);
 		
-		$pages = $this->Model->query( $args );
+		$posts = $this->Model->query( $args );
 		
-		$this->set('pages', $pages);
+		$this->set('posts', $posts);
+
 		
     }
 }
