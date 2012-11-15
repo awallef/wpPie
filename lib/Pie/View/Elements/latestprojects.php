@@ -1,4 +1,4 @@
-	<!-- Latest Projects -->
+<!-- Latest Projects -->
 	
 <div id="resume">
 	

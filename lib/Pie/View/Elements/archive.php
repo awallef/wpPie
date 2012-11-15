@@ -53,20 +53,16 @@
 	<!-- Accroche -->
 	
 	<div id="accrocheArea">
-		<div class="row offset1">
-
+		<div class="row">
+			<div class="span1"></div>
 			<div class="span8 accrocheContent">
 			<h1> &ldquo; We creat simple, beautiful and responsive design for each of our <a href="#">products</a>”. </h1>
 			</div>
-
+			<div class="span2"></div>
 		
 		</div>
 	</div>
-	
-	<?php echo $this->element('latestprojects'); ?> 
 
-
-	<?php echo $this->element('oldposts'); ?> 
 </div> <!-- end container -->
 <!-- Footer -->
 <?php echo $this->element('footer'); ?>

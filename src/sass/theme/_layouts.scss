@@ -1,7 +1,9 @@
+
 .footerLine {
-	border-top: #666 3px solid;
-	padding:10px 0 0 0;
-	margin:50px 0 0 0;
+	color:#FFF;
+	background-color:#333;
+	padding:50px;
+	text-align:center;
 
 }
 
@@ -12,8 +14,9 @@ height:500px;
 }
 
 #resume {
-
-margin-top: 5%;
+	border-bottom: #EEE solid 1px;
+	padding-bottom: 50px;
+	margin-top: 5%;
 	text-align:justify;
 
 	.span3 {
@@ -21,6 +24,40 @@ margin-top: 5%;
 	
 	
 	}
+}
+
+.googleMap {
+	margin:0 0 50px 0;
+	
+	iframe {
+	border: 1px solid #0CBCB3;
+	
+	}
+
+
+}
+
+.hero-unit {
+	text-align:center;
+	padding:70px;
+
+}
+
+.filters {
+	
+	ul{
+
+		li {
+		display:inline;
+		}
+	}
+}
+
+	
+.filterText {
+
+	float: left;
+	margin-right: 10px;
 }
 
 .row {
@@ -40,7 +77,61 @@ margin-top: 5%;
 	
 	&.aboutTeam {
 		padding-top:50px;
+		margin-bottom: 60px;
+
+			img {
+				margin-bottom:10px;
+		}
+	}
 	
+	&.portfolio {
+		
+		margin-left:3px;
+		margin:50px 0 100px 0;
+		
+		.span4 {
+			margin-left:10px;
+		
+		}
+	}
+	
+	
+	.infoContact {
+		font-weight:bold;
+		
+		p {
+			margin:10px 0 0 65px;
+		
+		}
+	}
+	
+	.inputForm {	
+		margin-bottom:50px;
+		
+		label {
+		color:#0CBCB3;
+		font-weight:bold;
+		margin-top:5px;
+		width:100px;
+		float:left;
+		
+		}
+		
+		input {
+			border:1px solid #666;
+			width:70%;
+
+		
+		}
+		
+		textarea {
+			border:1px solid #666;		
+			width:70%;
+		}
+	}
+	
+	.alert {
+		text-align:center;
 	
 	}
 
@@ -52,8 +143,9 @@ margin-top: 5%;
 
 
 	.accrocheContent{
+	text-align:center;
 	margin:40px 0 0 0;
-	padding:100px;
+	padding:40px;
 	background-color:#EEE;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;

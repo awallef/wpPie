@@ -24,6 +24,19 @@ class PostsController extends AppController{
 	$this->set('posts', $nav);	
 	
 	
+	//Project feed    
+    
+		$args = array(
+			'post_type'=> 'portfolio',
+			'order'    => 'DSC',
+
+
+		);
+		
+		$projects = $this->Model->query( $args );
+		
+		$this->set('projects', $projects);
+	
     }
     
     public function index()

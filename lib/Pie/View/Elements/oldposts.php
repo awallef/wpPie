@@ -21,7 +21,7 @@
 						}
 				?>
 				<p>
-					<?php echo $post2->post_content; ?>
+					<?php echo $post2->post_excerpt; ?>
 				</p>
 			</div> <!-- end span2 -->
 			<?php } ?>		

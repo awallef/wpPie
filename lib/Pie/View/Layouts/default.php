@@ -9,6 +9,8 @@
 	
 	<title><?php bloginfo('name'); ?></title>
 	
+	<link href='http://fonts.googleapis.com/css?family=Strait|Scada:400,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/modernizr.custom.29473.js"></script>
 	<link rel="stylesheet" href="<?php echo CSS .'bootstrap.min.css'; ?>" type="text/css" />
 	<link rel="stylesheet" href="<?php echo CSS .'screen.css'; ?>" type="text/css" />
 	

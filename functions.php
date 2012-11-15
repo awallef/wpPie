@@ -94,16 +94,9 @@ register_post_type( 'teammembers', $args );
  		
 add_theme_support( 'post-thumbnails' );
 
-// THIS LINKS THE THUMBNAIL TO THE POST PERMALINK
+add_post_type_support('page', 'excerpt');
 
-	add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
-	
-	function my_post_image_html( $html, $post_id, $post_image_id ) {
-
-	$html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
-
-	return $html;
-}
+add_post_type_support('post', 'excerpt');
 
 add_image_size('classic-thumb', 120, 120, true); // Classic crop
 

@@ -13,23 +13,55 @@
   font-weight: normal;
   font-style: normal; }
 
+body {
+  font-family: 'Strait', sans-serif; }
+
 #resume .secondaryTitle {
   margin-bottom: 50px; }
 
+.blueText {
+  color: #0CBCB3; }
+
+.filterText {
+  color: #0CBCB3;
+  font-weight: bold; }
+
+#accrocheArea .accrocheContent h1 {
+  font-size: 36px; }
+
 .footerLine {
-  border-top: #666 3px solid;
-  padding: 10px 0 0 0;
-  margin: 50px 0 0 0; }
+  color: #FFF;
+  background-color: #333;
+  padding: 50px;
+  text-align: center; }
 
 .temp {
   height: 500px;
   background-color: #E14; }
 
 #resume {
+  border-bottom: #EEE solid 1px;
+  padding-bottom: 50px;
   margin-top: 5%;
   text-align: justify; }
   #resume .span3 {
     width: 230px; }
+
+.googleMap {
+  margin: 0 0 50px 0; }
+  .googleMap iframe {
+    border: 1px solid #0CBCB3; }
+
+.hero-unit {
+  text-align: center;
+  padding: 70px; }
+
+.filters ul li {
+  display: inline; }
+
+.filterText {
+  float: left;
+  margin-right: 10px; }
 
 .row.lastPosts {
   border-bottom: #EEE solid 1px;
@@ -38,11 +70,40 @@
   border-bottom: #EEE solid 1px;
   padding-bottom: 50px; }
 .row.aboutTeam {
-  padding-top: 50px; }
+  padding-top: 50px;
+  margin-bottom: 60px; }
+  .row.aboutTeam img {
+    margin-bottom: 10px; }
+.row.portfolio {
+  margin-left: 3px;
+  margin: 50px 0 100px 0; }
+  .row.portfolio .span4 {
+    margin-left: 10px; }
+.row .infoContact {
+  font-weight: bold; }
+  .row .infoContact p {
+    margin: 10px 0 0 65px; }
+.row .inputForm {
+  margin-bottom: 50px; }
+  .row .inputForm label {
+    color: #0CBCB3;
+    font-weight: bold;
+    margin-top: 5px;
+    width: 100px;
+    float: left; }
+  .row .inputForm input {
+    border: 1px solid #666;
+    width: 70%; }
+  .row .inputForm textarea {
+    border: 1px solid #666;
+    width: 70%; }
+.row .alert {
+  text-align: center; }
 
 #accrocheArea .accrocheContent {
+  text-align: center;
   margin: 40px 0 0 0;
-  padding: 100px;
+  padding: 40px;
   background-color: #EEE;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
