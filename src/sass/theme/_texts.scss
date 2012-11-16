@@ -1,6 +1,25 @@
 body {
 font-family: 'Strait', sans-serif;
+}
 
+i {
+font-size:20px;
+
+	.icon-map-marker {
+	background-position: 0px -1px;
+
+	}
+	
+}
+
+
+
+input {
+
+		&[type="button"] {
+			font-family: 'Strait', sans-serif;
+		
+		}
 }
 
 #resume {

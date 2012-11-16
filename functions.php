@@ -94,11 +94,15 @@ register_post_type( 'teammembers', $args );
  		
 add_theme_support( 'post-thumbnails' );
 
+add_theme_support( 'menus' );
+
 add_post_type_support('page', 'excerpt');
 
 add_post_type_support('post', 'excerpt');
 
 add_image_size('classic-thumb', 120, 120, true); // Classic crop
+
+add_image_size('news-thumb', 770, 250, true); // Classic crop
 
 add_image_size('featured-thumb', 370, 250, true); // Crop set for thumbnails  in the featured blog posts Area
 

@@ -7,7 +7,6 @@
 	<!-- Featured Blog Posts -->	
 		
 		<?php foreach( $archives as $archive ){ ?>	
-			<div class="span3 archiveMenu"><span class="filterText">ARCHIVES  <?php wp_list_categories('&title=li'); ?>  </span></div>
 			<div class="span8">
 					<?php 
 						//echo '<span class="label">'. $cat->name. '</span>';

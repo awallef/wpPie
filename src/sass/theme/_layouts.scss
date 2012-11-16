@@ -7,6 +7,37 @@
 
 }
 
+.menu-header {
+	float: left;
+	height: 25px;
+	padding-top: 11px;
+	
+	li {
+		display:inline-block;
+		width:80px;
+		text-align:center;
+		
+		&.current-menu-item {
+
+			/*border-top: 1px solid #0CBCB3;*/
+
+		}
+		
+		a {
+			color:#999; 
+		
+		&:hover {
+			color:#FFF;
+		}
+
+		}
+		
+	}
+	
+	
+}
+
+
 .temp {
 height:500px;
 	background-color:#E14;
@@ -40,6 +71,7 @@ height:500px;
 .hero-unit {
 	text-align:center;
 	padding:70px;
+	margin-top: 12px;
 
 }
 
@@ -76,13 +108,22 @@ height:500px;
 	}
 	
 	&.aboutTeam {
-		padding-top:50px;
-		margin-bottom: 60px;
+		padding-top:20px;
 
 			img {
 				margin-bottom:10px;
 		}
 	}
+	
+	&.aboutTeambis {
+		padding-top:20px;
+		margin-bottom:70px;
+
+			img {
+				margin-bottom:10px;
+		}
+	}
+
 	
 	&.portfolio {
 		
@@ -95,13 +136,35 @@ height:500px;
 		}
 	}
 	
+	&.archive{
+	
+		.span8 {
+		
+			margin-bottom: 40px;
+			border-bottom: solid 1px #999;
+			padding-bottom: 50px;
+		
+		}
+	}
+	
 	
 	.infoContact {
 		font-weight:bold;
 		
-		p {
-			margin:10px 0 0 65px;
+		.adressIcons {
+			float: left;
+			padding: 6px 30px 0 0;
+			
+		}
 		
+		.icon-phone {
+			margin-top: 77px;
+		
+		}
+		
+		p {
+			margin: 10px 0 39px 70px;
+			padding-top: 10px;
 		}
 	}
 	
@@ -121,6 +184,21 @@ height:500px;
 			border:1px solid #666;
 			width:70%;
 
+			&[type="button"] {
+			width:22%;
+			background-color:#0CBCB3;
+			border-color:#0CBCB3;
+			float: right;
+			margin-right: 56px;
+			
+			&[type="button"]:active {
+				color:#FFF;
+				background-color:#0D7069;
+			
+			}
+		
+		}
+		
 		
 		}
 		
@@ -128,6 +206,7 @@ height:500px;
 			border:1px solid #666;		
 			width:70%;
 		}
+		
 	}
 	
 	.alert {
@@ -153,6 +232,13 @@ height:500px;
 	
 	
 	}
+}
+
+.adressIcons {
+	width:10px;
+	height:100px;
+
+
 }
 
 

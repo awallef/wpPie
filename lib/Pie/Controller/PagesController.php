@@ -6,42 +6,38 @@ class PagesController extends AppController{
     public function view()
     {
     		
-    $content = '';		
+	
     		
-    switch ($content){ 
-	    
-	    	case "/github/Stage/wpTest/?page_id=31":
-	        	$content = 'about';
-	    		break;
-	    
-	    	case "http://localhost:8888/github/Stage/wpTest/?page_id=33":
-	        	$content = 'contact';
-	    		break;
-	    		
-	    	case "/github/Stage/wpTest/?page_id=242":
-	        	$content = 'portfolio';
-	    		break;
-
-	    	default:
-	        	$content = 'contact';
-	        	break;
-		}
+    $content = 'portfolio';
 		
 		$this->set('content', $content);
 		
 		
     		
-    //Team Member posts
+    //Team Member posts 1-3
     
 	   $args = array(
 			'post_type'=> 'teammembers',
-			'order'    => 'ASC',
+			'order'    => 'DESC',
+			'showposts' => '3'
 
 		);
 		
 		$posts = $this->Model->query( $args );
 		
 		$this->set('posts', $posts);
+		
+		// posts 3+
+		$args = array(
+			'post_type'=> 'teammembers',
+			'order'    => 'DESC',
+			'offset' => '3'
+
+		);
+		
+		$posts2 = $this->Model->query( $args );
+		
+		$this->set('posts2', $posts2);
 		
 	//Portfolio page
     
@@ -55,6 +51,19 @@ class PagesController extends AppController{
 		
 		$this->set('portfolios', $portfolios);
 
+	//Archive page
+    
+	   $args = array(
+			'post_type'=> 'post',
+			'order'    => 'ASC',
+
+		);
+		
+		$archives = $this->Model->query( $args );
+		
+		$this->set('archives', $archives);
+
+	
 	
     }
 }
