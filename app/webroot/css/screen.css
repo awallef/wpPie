@@ -731,6 +731,7 @@ ul.icons {
 .icon-user-md:before {
   content: "\f200"; }
 
+/* texts.scss */
 body {
   font-family: 'Strait', sans-serif; }
 
@@ -744,6 +745,18 @@ input[type="button"] {
 
 #resume .secondaryTitle {
   margin-bottom: 50px; }
+
+li {
+  display: inline-block;
+  text-align: center; }
+  li.current-menu-item {
+    font-style: italic; }
+    li.current-menu-item a {
+      color: #0CBCB3; }
+  li a {
+    color: #999; }
+    li a:hover {
+      color: #FFF; }
 
 .blueText {
   color: #0CBCB3; }
@@ -769,12 +782,6 @@ input[type="button"] {
     display: inline-block;
     width: 80px;
     text-align: center; }
-    .menu-header li.current-menu-item {
-      /*border-top: 1px solid #0CBCB3;*/ }
-    .menu-header li a {
-      color: #999; }
-      .menu-header li a:hover {
-        color: #FFF; }
 
 .temp {
   height: 500px;

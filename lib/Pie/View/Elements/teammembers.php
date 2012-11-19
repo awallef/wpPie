@@ -50,6 +50,7 @@
 				?>
 				<p>
 					<?php echo $post2->post_content; ?>
+					
 				</p>
 			</div> <!-- end span4 -->
 			<?php } ?>		

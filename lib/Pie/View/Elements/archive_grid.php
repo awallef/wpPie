@@ -1,16 +1,17 @@
 <!-- Archive Element -->
 <div class="container">
 	
-	<div class="row">
+	 <div class="row">
 	
-		<div class="span3 archiveMenu"><span class="filterText">ARCHIVES</span></div>
-		<div class="span3">  <?php wp_list_categories('&title=li'); ?>  </div>
-		<div class="span3"><?php wp_get_archives('type=monthly'); ?></div>
+		<!--<div class="span3 archiveMenu"><span class="filterText">ARCHIVES</span></div>
+		 <div class="span3">  <?php wp_list_categories('&title=li'); ?>  </div>
+		<div class="span3"><?php wp_get_archives('type=monthly'); ?></div> -->
 	</div>
 
+
 	<div class="row archive">
-		
 	
+		
 	<!-- Featured Blog Posts -->	
 		
 		<?php foreach( $archives as $archive ){ ?>	

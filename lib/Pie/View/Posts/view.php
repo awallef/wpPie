@@ -5,8 +5,9 @@
 
 	
 	<div class="row">
-			<div class="span1"></div>
-			<div class="span5">
+
+			<div class="span8 offset2">
+			
 			<?php 
 				$id = get_the_id();
 				$post = get_post($id);
@@ -18,6 +19,14 @@
 				<?php
 					echo $post->post_content; 
 				?>
+				<?php 
+					 if ( has_post_thumbnail()) {
+
+					   the_post_thumbnail('project-thumb');
+					 }
+				if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image'); endif;
+				if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'third-image'); endif; ?> 
+
 			<div class="postNav">
 				<div class="pagination">
 				  <ul>
@@ -28,15 +37,7 @@
 				</div><!-- end pagination -->						
 			</div><!-- end postNav -->	
 				
-			</div> <!-- end span5 -->
-			<div class="span5">
-				<?php 
-					 if ( has_post_thumbnail()) {
-
-					   the_post_thumbnail('featured-thumb');
-					 }
-					 ?>	
-			</div><!-- end span5 -->		
+			</div> <!-- end span8 -->		
 			<div class="span1"></div>	
 	</div> <!-- end row -->
 

@@ -1,5 +1,12 @@
 <!-- Archive Element -->
+<?php wp_get_archives('type=monthly'); ?>
 <div class="container">
+	
+	<div class="row">
+	
+		<div class="span3 archiveMenu"><span class="filterText">ARCHIVES  <?php wp_list_categories('&title=li'); ?>  </span></div>
+	
+	</div>
 
 	<div class="row archive">
 		
@@ -7,8 +14,8 @@
 	<!-- Featured Blog Posts -->	
 		
 		<?php foreach( $archives as $archive ){ ?>	
-			<div class="span3 archiveMenu"><span class="filterText">ARCHIVES  <?php wp_list_categories('&title=li'); ?>  </span></div>
-			<div class="span8">
+			
+			<div class="span3">
 					<?php 
 						//echo '<span class="label">'. $cat->name. '</span>';
 		
@@ -23,7 +30,7 @@
 				<h4><a href="<?php echo get_permalink($archive->ID); ?>"><?php echo $archive->post_title; ?></a></h4>
 				
 				<h6><?php $user_info = get_userdata(1);
-     			echo ' ' . $archive->post_date. "\n";
+     			 echo the_time('F jS Y ');
 				
 				$post_categories = wp_get_post_categories( $archive->ID );
 					$cats = array();
@@ -38,13 +45,20 @@
 					?>
 
      			</h6>
-     		
+
 				<p>
 					
-					<?php echo $archive->post_content; ?>
+					<?php echo $archive->post_content ?>
+					
+					
+					
+					
 				</p>
-			</div> <!-- end span8 -->		
+			</div> <!-- end span3 -->		
 		<?php } ?>
+		
+		
+		
 		
 	</div> <!-- end row .archive -->
 	

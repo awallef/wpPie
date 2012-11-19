@@ -1,3 +1,5 @@
+/* texts.scss */
+
 body {
 font-family: 'Strait', sans-serif;
 }
@@ -30,6 +32,30 @@ input {
 
 }
 
+li {
+		display:inline-block;
+		text-align:center;
+		
+		&.current-menu-item {
+
+			font-style:italic;
+			
+			a {
+			color:#0CBCB3;
+			
+			}
+
+		}
+		
+		a {
+			color:#999; 
+		
+			&:hover {
+				color:#FFF;
+			}
+
+		}
+}
 
 .blueText {
 	color:#0CBCB3;

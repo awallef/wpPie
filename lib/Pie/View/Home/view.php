@@ -25,8 +25,8 @@
 				<h4><a href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a></h4>
 				
 				<h6><?php $user_info = get_userdata(1);
-     			echo ' ' . $post->post_date. "\n";
-				
+     			 the_time('F jS Y ');
+     							
 				$post_categories = wp_get_post_categories( $post->ID );
 					$cats = array();
 						
@@ -42,7 +42,6 @@
      			</h6>
      		
 				<p>
-					
 					<?php echo $post->post_content; ?>
 				</p>
 			</div> <!-- end span4 -->		

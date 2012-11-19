@@ -8,7 +8,7 @@ class PagesController extends AppController{
     		
 	
     		
-    $content = 'portfolio';
+    $content = 'archive_grid';
 		
 		$this->set('content', $content);
 		
@@ -55,7 +55,7 @@ class PagesController extends AppController{
     
 	   $args = array(
 			'post_type'=> 'post',
-			'order'    => 'ASC',
+			'order'    => 'DESC',
 
 		);
 		

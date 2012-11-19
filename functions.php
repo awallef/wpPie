@@ -91,8 +91,28 @@ $args = array(
 register_post_type( 'teammembers', $args );
 }
 
- 		
+		
 add_theme_support( 'post-thumbnails' );
+
+if (class_exists('MultiPostThumbnails')) {
+        new MultiPostThumbnails(
+            array(
+                'label' => '2nd Thumbnail',
+                'id' => 'secondary-image',
+                'post_type' => 'post'
+            )
+        );
+        
+        new MultiPostThumbnails(
+            array(
+                'label' => '3rd Thumbnail',
+                'id' => 'third-image',
+                'post_type' => 'post'
+            )
+        );
+
+    }
+
 
 add_theme_support( 'menus' );
 
@@ -111,5 +131,4 @@ add_image_size('project-thumb', 370, 170, true); // Crop set for thumbnails  in 
 add_image_size('oldpostfeed-thumb', 270, 150, true); // Crop set for thumbnails  in the "older posts" Area
 
 add_image_size( 'fullpost-thumb', 590, 9999, true ); // Unlimited Height Mode
-
 ?>
