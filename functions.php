@@ -1,6 +1,15 @@
 <?php
 include_once 'lib/Pie/Config/bootstrap.php';
 
+add_action( 'load-index.php', 'hide_welcome_panel' );
+
+function hide_welcome_panel() {
+    $user_id = get_current_user_id();
+
+    if ( 1 == get_user_meta( $user_id, 'show_welcome_panel', true ) )
+        update_user_meta( $user_id, 'show_welcome_panel', 0 );
+}
+
 //Posttype Portfolio
 
 add_action( 'init', 'register_cpt_portfolio' );
@@ -46,7 +55,7 @@ $args = array(
 register_post_type( 'portfolio', $args );
 }
 
-//Posttype Team Members
+//Post type Team Members
 
 add_action( 'init', 'register_cpt_team' );
 
@@ -112,6 +121,120 @@ if (class_exists('MultiPostThumbnails')) {
         );
 
     }
+    
+    
+    
+    
+    //Excerpt "More" after text
+    
+function wppie_excerpt_more( $output ) {
+	if ( has_excerpt() && ! is_attachment() ) {
+		$output .= wppie_continue_reading_link();
+	}
+	return $output;
+}
+add_filter( 'get_the_excerpt', 'wppie_custom_excerpt_more' );   
+
+
+
+
+     //TEMPLATE POSTS
+
+function post_template_meta_box($post) {
+  if ( 'post' == $post->post_type && 0 != count( get_post_templates() ) ) {
+    $template = get_post_meta($post->ID,'_post_template',true);
+    ?>
+<label class="screen-reader-text" for="post_template"><?php _e('Post Template') ?></label><select name="post_template" id="post_template">
+<option value='default'><?php _e('Default Template'); ?></option>
+<?php post_template_dropdown($template); ?>
+</select>
+<?php
+  } ?>
+<?php
+}
+
+add_action('add_meta_boxes','add_post_template_metabox');
+function add_post_template_metabox() {
+    add_meta_box('postparentdiv', __('Post Template'), 'post_template_meta_box', 'post', 'side', 'core');
+}
+
+function get_post_templates() {
+  $themes = wp_get_themes();
+  $theme = wp_get_theme();
+  $templates = $theme->{'Template Files'};
+  $post_templates = array();
+
+  if ( is_array( $templates ) ) {
+    $base = array( trailingslashit(get_template_directory()), trailingslashit(get_stylesheet_directory()) );
+
+    foreach ( $templates as $template ) {
+      $basename = str_replace($base, '', $template);
+      if ($basename != 'functions.php') {
+        // don't allow template files in subdirectories
+        if ( false !== strpos($basename, '/') )
+          continue;
+
+        $template_data = implode( '', file( $template ));
+
+        $name = '';
+        if ( preg_match( '|Post Template:(.*)$|mi', $template_data, $name ) )
+          $name = _cleanup_header_comment($name[1]);
+
+        if ( !empty( $name ) ) {
+          $post_templates[trim( $name )] = $basename;
+        }
+      }
+    }
+  }
+
+  return $post_templates;
+}
+
+function post_template_dropdown( $default = '' ) {
+  $templates = get_post_templates();
+  ksort( $templates );
+  foreach (array_keys( $templates ) as $template )
+    : if ( $default == $templates[$template] )
+      $selected = " selected='selected'";
+    else
+      $selected = '';
+  echo "\n\t<option value='".$templates[$template]."' $selected>$template</option>";
+  endforeach;
+}
+
+add_action('save_post','save_post_template',10,2);
+function save_post_template($post_id,$post) {
+  if ($post->post_type=='post' && !empty($_POST['post_template']))
+    update_post_meta($post->ID,'_post_template',$_POST['post_template']);
+}
+
+add_filter('single_template','get_post_template_for_template_loader');
+function get_post_template_for_template_loader($template) {
+  global $wp_query;
+  $post = $wp_query->get_queried_object();
+  if ($post) {
+    $post_template = get_post_meta($post->ID,'_post_template',true);
+    if (!empty($post_template) && $post_template!='default')
+      $template = get_stylesheet_directory() . "/{$post_template}";
+  }
+  return $template;
+}
+
+
+/*__________________*/
+
+function pages_template_dropdown( $default = '' ) {
+	$templates = get_page_templates();
+	ksort( $templates );
+	foreach (array_keys( $templates ) as $template )
+		: if ( $default == $templates[$template] )
+			$selected = " selected='selected'";
+		else
+			$selected = '';
+	echo "\n\t<option value='".$templates[$template]."' $selected>$template</option>";
+	endforeach;
+}
+
 
 
 add_theme_support( 'menus' );

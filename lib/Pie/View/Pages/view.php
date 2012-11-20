@@ -1,11 +1,20 @@
-<!-- Portfolio Page -->
+<!-- Pages View -->
 
 <!-- Banner -->
 	<?php echo $this->element('banner'); ?>
-<div class="container">
-		
-<?php echo $this->element($content);?>
 
+<!--
+|
+|
+|
+	
+CONTENT
+	
+|
+|
+|
+|
+-->
 
 </div><!-- end container -->
 <?php echo $this->element('footer'); ?>

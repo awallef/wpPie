@@ -1,11 +1,14 @@
-<!-- Posts View -->
-	<!-- Banner -->
-	<?php echo $this->element('banner'); ?> 
+<?php 
+/* 
+Post Template: About Us 
+*/ 
+?>
+
 <div class="container">
 
 	<div class="row">
 			
-					<div class="span8 offset2">
+			<div class="span8 offset2">
 			
 			<?php 
 				$id = get_the_id();
@@ -18,11 +21,7 @@
 				<?php
 					echo $post->post_content; 
 				?>
-				<div class="span8 postImages">
-					<?php 
-						if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(the_post_thumbnail('large'), 'first-image'); endif;	 
-						if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(),'secondary-image'); endif;
-						if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'third-image'); endif; 								?> 
+				
 				</div>
 			<div class="postNav">
 				<div class="pagination">
@@ -37,8 +36,3 @@
 			</div> <!-- end span8 -->		
 			<div class="span1"></div>	
 	</div> <!-- end row -->
-
-</div> <!-- end container -->
-
-		<!-- Footer -->
-	<h6><?php echo $this->element('footer'); ?> </h6>

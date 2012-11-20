@@ -6,9 +6,7 @@ class PagesController extends AppController{
     public function view()
     {
     		
-	
-    		
-    $content = 'archive_grid';
+    $content = 'news';
 		
 		$this->set('content', $content);
 		
@@ -62,8 +60,20 @@ class PagesController extends AppController{
 		$archives = $this->Model->query( $args );
 		
 		$this->set('archives', $archives);
+		
+	//Test Template page
+    
+	   $args = array(
+			'post_type'=> 'post',
+			'order'    => 'DESC',
 
-	
+		);
+		
+		$test = $this->Model->query( $args );
+		
+		$this->set('tests', $test);
+
+
 	
     }
 }

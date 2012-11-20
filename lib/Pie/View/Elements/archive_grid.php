@@ -10,14 +10,12 @@
 
 
 	<div class="row archive">
-	
 		
 	<!-- Featured Blog Posts -->	
-		
+	
 		<?php foreach( $archives as $archive ){ ?>	
 			<div class="span3">
 					<?php 
-						//echo '<span class="label">'. $cat->name. '</span>';
 		
 		 				if ( has_post_thumbnail($archive->ID)) {
 							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($archive->ID), 'news-thumb');
@@ -38,9 +36,9 @@
 					foreach($post_categories as $c){
 						$cat = get_category( $c );
 						$cats[] = array( 'name' => $cat->name );
-
+						echo '/  ' . $cat->name. "\n";
 						}
-					echo '/  ' . $cat->name. "\n";
+					
 					echo '/ by  ' . $user_info->user_login . "\n";
 					?>
 

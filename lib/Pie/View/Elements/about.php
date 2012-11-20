@@ -1,3 +1,9 @@
+<?php 
+/* 
+Post Template: About Us 
+*/ 
+?>
+
 <!-- Pages View -->
 <div class="container">
 

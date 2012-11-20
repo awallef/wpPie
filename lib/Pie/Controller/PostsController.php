@@ -37,6 +37,8 @@ class PostsController extends AppController{
 		
 		$this->set('projects', $projects);
 	
+
+	
     }
     
     public function index()
