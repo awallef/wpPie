@@ -761,6 +761,14 @@ li {
 .blueText {
   color: #0CBCB3; }
 
+.calDate {
+  font-size: 40px;
+  color: #0CBCB3;
+  font-style: italic; }
+
+.filters a:hover {
+  color: #0CBCB3; }
+
 .filterText {
   color: #0CBCB3;
   font-weight: bold; }
@@ -782,6 +790,28 @@ li {
     display: inline-block;
     width: 80px;
     text-align: center; }
+
+.postImages {
+  margin: 20px 0 0 0; }
+  .postImages img {
+    margin: 5px 0 0 0; }
+
+.navNext {
+  font-size: 50px;
+  opacity: 0.6;
+  margin-top: 12%;
+  text-align: left; }
+  .navNext a {
+    position: fixed; }
+
+.span1.navPrev {
+  text-align: right;
+  font-size: 50px;
+  opacity: 0.6;
+  margin-top: 12%;
+  margin-right: 29px; }
+  .span1.navPrev a {
+    position: fixed; }
 
 .temp {
   height: 500px;
@@ -871,6 +901,9 @@ li {
     width: 70%; }
 .row .alert {
   text-align: center; }
+
+.postinfo {
+  text-align: right; }
 
 #accrocheArea .accrocheContent {
   text-align: center;

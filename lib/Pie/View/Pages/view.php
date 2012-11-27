@@ -2,7 +2,7 @@
 
 <!-- Banner -->
 	<?php echo $this->element('banner'); ?>
-
+<?php echo $this->element($content); ?>
 <!--
 |
 |

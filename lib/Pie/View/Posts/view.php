@@ -4,14 +4,16 @@
 <div class="container">
 
 	<div class="row">
-			
-					<div class="span8 offset2">
+			<div class="span1 offset1 navPrev">
+				<?php previous_post_link('%link', '<'); ?>
+			</div>
+					<div class="span8">
 			
 			<?php 
 				$id = get_the_id();
 				$post = get_post($id);
 				$title = $post->post_title;?>
-				<h1><?php echo $title;?></h1>
+				<h1 class="blueText"><?php echo $title;?></h1>
 				<h6><?php $user_info = get_userdata(1);
      				echo 'posted by: ' . $user_info->user_login . "\n";
      		?></h6>
@@ -27,15 +29,15 @@
 			<div class="postNav">
 				<div class="pagination">
 				  <ul>
-				    <li><?php previous_post_link('%link', 'Previous'); ?></li>
+				    <li><?php previous_post_link('%link', '<'); ?></li>
 
-				    <li><?php next_post_link('%link', 'Next'); ?></li>
+				    <li><?php next_post_link('%link', '>'); ?></li>
 				  </ul>
 				</div><!-- end pagination -->						
 			</div><!-- end postNav -->	
 				
 			</div> <!-- end span8 -->		
-			<div class="span1"></div>	
+			<div class="span1 navNext"><?php next_post_link('%link', '>'); ?></div>	
 	</div> <!-- end row -->
 
 </div> <!-- end container -->

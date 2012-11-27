@@ -1,6 +1,7 @@
 <div class="footerLine">
 
-Text Area fo' tha foota <h6>© 3xW 2012</h6>
+Text Area fo' tha foota <h6>3xW <?php echo comicpress_copyright(); ?>
+</h6>
 
 <div>
 	<a href="#"><img src="http://localhost:8888/github/Stage/wpTest/wp-content/uploads/2012/11/twitter.png"/></a>

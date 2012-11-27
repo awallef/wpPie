@@ -1,21 +1,22 @@
 <!-- Archive Element -->
 <div class="container">
 	
-	 <div class="row">
+	<div class="row">
 	
-		<!--<div class="span3 archiveMenu"><span class="filterText">ARCHIVES</span></div>
-		 <div class="span3">  <?php wp_list_categories('&title=li'); ?>  </div>
-		<div class="span3"><?php wp_get_archives('type=monthly'); ?></div> -->
+		<div class="span3 archiveMenu"><span class="filterText">ARCHIVES</span></div>
+		<div class="span3">  <?php wp_list_categories('&title=li'); ?>  </div>
+		<div class="span3"><?php wp_get_archives('type=monthly'); ?></div>
 	</div>
-
 
 	<div class="row archive">
 		
-	<!-- Featured Blog Posts -->	
 	
+	<!-- Featured Blog Posts -->	
+		
 		<?php foreach( $archives as $archive ){ ?>	
 			<div class="span3">
 					<?php 
+						//echo '<span class="label">'. $cat->name. '</span>';
 		
 		 				if ( has_post_thumbnail($archive->ID)) {
 							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($archive->ID), 'news-thumb');
@@ -36,9 +37,9 @@
 					foreach($post_categories as $c){
 						$cat = get_category( $c );
 						$cats[] = array( 'name' => $cat->name );
-						echo '/  ' . $cat->name. "\n";
+
 						}
-					
+					echo '/  ' . $cat->name. "\n";
 					echo '/ by  ' . $user_info->user_login . "\n";
 					?>
 
@@ -50,12 +51,6 @@
 				</p>
 			</div> <!-- end span3 -->	
 		<?php } ?>
-		
-		
-		
-		
+
 	</div> <!-- end row .archive -->
-	
-	
-	
 </div> <!-- end container -->

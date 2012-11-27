@@ -9,7 +9,7 @@ Post Template: About Us
 
 	<div class="row aboutHead">
 		<div class="span6">
-		<img src="http://localhost:8888/github/Stage/wpTest/wp-content/uploads/2012/11/palace1.jpg"/>
+		<img src="http://localhost:8888/github/Stage/wpTest/wp-content/uploads/2012/11/palace.jpg"/>
 		</div>
 	
 		<div class="span6">

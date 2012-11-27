@@ -10,6 +10,33 @@ function hide_welcome_panel() {
         update_user_meta( $user_id, 'show_welcome_panel', 0 );
 }
 
+
+// Dynamic Footer Copyright Date
+
+
+function comicpress_copyright() {
+global $wpdb;
+$copyright_dates = $wpdb->get_results("
+SELECT
+YEAR(min(post_date_gmt)) AS firstdate,
+YEAR(max(post_date_gmt)) AS lastdate
+FROM
+$wpdb->posts
+WHERE
+post_status = 'publish'
+");
+$output = '';
+if($copyright_dates) {
+$copyright = "&copy; " . $copyright_dates[0]->firstdate;
+if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
+$copyright .= '-' . $copyright_dates[0]->lastdate;
+}
+$output = $copyright;
+}
+return $output;
+}
+
+
 //Posttype Portfolio
 
 add_action( 'init', 'register_cpt_portfolio' );
@@ -99,31 +126,7 @@ $args = array(
 
 register_post_type( 'teammembers', $args );
 }
-
-		
-add_theme_support( 'post-thumbnails' );
-
-if (class_exists('MultiPostThumbnails')) {
-        new MultiPostThumbnails(
-            array(
-                'label' => '2nd Thumbnail',
-                'id' => 'secondary-image',
-                'post_type' => 'post'
-            )
-        );
-        
-        new MultiPostThumbnails(
-            array(
-                'label' => '3rd Thumbnail',
-                'id' => 'third-image',
-                'post_type' => 'post'
-            )
-        );
-
-    }
-    
-    
-    
+		    
     
     //Excerpt "More" after text
     
@@ -221,21 +224,73 @@ function get_post_template_for_template_loader($template) {
 }
 
 
-/*__________________*/
+/* THUMBNAILS */
 
-function pages_template_dropdown( $default = '' ) {
-	$templates = get_page_templates();
-	ksort( $templates );
-	foreach (array_keys( $templates ) as $template )
-		: if ( $default == $templates[$template] )
-			$selected = " selected='selected'";
-		else
-			$selected = '';
-	echo "\n\t<option value='".$templates[$template]."' $selected>$template</option>";
-	endforeach;
+
+add_theme_support( 'post-thumbnails' );
+
+// Thumbnails normal posts.
+
+if (class_exists('MultiPostThumbnails')) {
+        new MultiPostThumbnails(
+            array(
+                'label' => '2nd Thumbnail',
+                'id' => 'secondary-image',
+                'post_type' => 'post'
+            )
+        );
+        
+        new MultiPostThumbnails(
+            array(
+                'label' => '3rd Thumbnail',
+                'id' => 'third-image',
+                'post_type' => 'post'
+            )
+        );
+        
+        new MultiPostThumbnails(
+            array(
+                'label' => '4th Thumbnail',
+                'id' => 'fourth-image',
+                'post_type' => 'post'
+            )
+        );
+
+    }
+   
+// Thumbnails custom post types.    
+    
+    
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            'label' => '2nd Thumbnail',
+            'id' => 'secondary-image',
+            'post_type' => 'portfolio'
+        )
+    );
+    
+    new MultiPostThumbnails(
+        array(
+            'label' => '3rd Thumbnail',
+            'id' => 'third-image',
+            'post_type' => 'portfolio'
+        )
+    );
+    
+     new MultiPostThumbnails(
+        array(
+            'label' => '4th Thumbnail',
+            'id' => 'fourth-image',
+            'post_type' => 'portfolio'
+        )
+    );
+ 
+
 }
 
 
+/* Thumbnail Sizes */
 
 add_theme_support( 'menus' );
 
@@ -245,7 +300,9 @@ add_post_type_support('post', 'excerpt');
 
 add_image_size('classic-thumb', 120, 120, true); // Classic crop
 
-add_image_size('news-thumb', 770, 250, true); // Classic crop
+add_image_size('news-thumb', 770, 250, true); // News thumbnail crop
+
+add_image_size('arch-thumb', 710, 340, true); // Archive thumbnail crop
 
 add_image_size('featured-thumb', 370, 250, true); // Crop set for thumbnails  in the featured blog posts Area
 

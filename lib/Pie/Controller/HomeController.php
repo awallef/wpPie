@@ -11,6 +11,7 @@ class HomeController extends AppController{
 			'post_type'=> 'post',
 			'order'    => 'DSC',
 			'showposts' => 3,
+			
 
 		);
 		
@@ -23,7 +24,8 @@ class HomeController extends AppController{
 		$args = array(
 			'post_type'=> 'post',
 			'order'    => 'DSC',
-			'offset' => 3
+			'offset' => 3,
+			'showposts' => 6
 		);
 		
 		$posts2 = $this->Model->query( $args );

@@ -8,7 +8,7 @@
 		
 	
 	<!-- Featured Blog Posts -->	
-		
+
 		<?php foreach( $posts as $post ){ ?>	
 			<div class="span4">
 					<?php 
@@ -25,8 +25,8 @@
 				<h4><a href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a></h4>
 				
 				<h6><?php $user_info = get_userdata(1);
-     			 the_time('F jS Y ');
-     							
+     			echo $post->post_date;
+     			echo the_date('Y-m-d', '<h2>', '</h2>');
 				$post_categories = wp_get_post_categories( $post->ID );
 					$cats = array();
 						

@@ -22,6 +22,46 @@
 	
 }
 
+
+.postImages {
+	margin:20px 0 0 0;
+	
+	img {
+		margin:5px 0 0 0;
+	
+	}
+
+
+}
+
+.navNext {
+font-size: 50px;
+opacity: 0.6;
+margin-top: 12%;
+text-align: left;
+		
+		a {
+			position:fixed;
+		
+		}
+
+}
+
+.span1.navPrev {
+
+
+text-align: right;
+font-size: 50px;
+opacity: 0.6;
+margin-top: 12%;
+margin-right: 29px;
+
+		a {
+			position:fixed;
+		
+		}
+}
+
 .temp {
 height:500px;
 	background-color:#E14;
@@ -131,7 +171,6 @@ height:500px;
 		}
 	}
 	
-	
 	.infoContact {
 		font-weight:bold;
 		
@@ -200,6 +239,12 @@ height:500px;
 
 
 }
+
+
+.postinfo {
+		
+		text-align:right;
+	}
 
 
 #accrocheArea {

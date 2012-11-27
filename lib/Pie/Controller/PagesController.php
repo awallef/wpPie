@@ -5,12 +5,10 @@ class PagesController extends AppController{
    
     public function view()
     {
-    		
-    $content = 'news';
+
+    $content = 'portfolio';
 		
 		$this->set('content', $content);
-		
-		
     		
     //Team Member posts 1-3
     
@@ -25,11 +23,12 @@ class PagesController extends AppController{
 		
 		$this->set('posts', $posts);
 		
-		// posts 3+
+	// posts 3+
 		$args = array(
 			'post_type'=> 'teammembers',
 			'order'    => 'DESC',
 			'offset' => '3'
+			
 
 		);
 		
@@ -61,19 +60,19 @@ class PagesController extends AppController{
 		
 		$this->set('archives', $archives);
 		
-	//Test Template page
+		//Archive test page
     
 	   $args = array(
 			'post_type'=> 'post',
 			'order'    => 'DESC',
+			'showposts' =>'4',
+			'offset' =>'4'
 
 		);
 		
-		$test = $this->Model->query( $args );
+		$archives2 = $this->Model->query( $args );
 		
-		$this->set('tests', $test);
-
-
-	
+		$this->set('archives2', $archives2);
+			
     }
 }

@@ -1,7 +1,6 @@
 <!-- Portfolio Page -->
 
 <div class="container">
-		
 		<div class="span6 filters">
 				<!-- <span class="filterText">FILTERS | </span><ul> <?php wp_list_categories( '&title_li= ' ); ?></ul> -->
 				
